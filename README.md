@@ -1,2 +1,2 @@
-# Learning-Management-System
+# Management Information System
 LMS for Dhamma School.
