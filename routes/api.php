@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;//controller
 use App\Http\Controllers\UploadedBooksController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -41,3 +42,5 @@ Route::delete("deleteBooks/{id}",[BooksController::class,'deleteBooks']);
 //serach books
 Route::get("serachBooks/{name}",[BooksController::class,'serachBooks']);
 
+//category
+Route::post("stroeCategory",[CategoryController::class,'store']);

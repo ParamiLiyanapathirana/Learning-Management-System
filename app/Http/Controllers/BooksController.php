@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Books;
+
 use Validator;
 
 class BooksController extends Controller
@@ -19,6 +20,7 @@ class BooksController extends Controller
     function viewBooks()
     {
         return Books::all();
+        
     }
 
     //add books
@@ -109,7 +111,6 @@ class BooksController extends Controller
         if($result)
         return["Result"=>"Book detail has been deleted"];
         else
-        
         return["Result"=>"Book detail has not been deleted"];
     }
 
@@ -119,5 +120,6 @@ class BooksController extends Controller
         return Books::where("name","like","%".$name."%")->get();
     }
 
+    
     
 }
