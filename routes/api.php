@@ -42,5 +42,17 @@ Route::delete("deleteBooks/{id}",[BooksController::class,'deleteBooks']);
 //serach books
 Route::get("serachBooks/{name}",[BooksController::class,'serachBooks']);
 
+
+
+
 //category
 Route::post("stroeCategory",[CategoryController::class,'store']);
+
+//view categories
+Route::get("viewCategory",[CategoryController::class,'viewCategory']);
+
+//update category
+Route::put("updateCategory",[CategoryController::class,'updateCategory']);
+
+//delete  category
+Route::delete("deleteCategory/{id}",[CategoryController::class,'deleteCategory']);

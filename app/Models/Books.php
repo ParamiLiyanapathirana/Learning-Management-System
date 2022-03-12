@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Books extends Model
 {
     use HasFactory;
-    //public $timestamps=false;
+    public $timestamps=true;//get time and date updated and created
 }

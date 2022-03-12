@@ -9,7 +9,7 @@ class UploadedBooksController extends Controller
     //
     function uploadedFiles(Request $request)
     {
-        $result=$request->file('file')->store('LibraryBooks');
+        $result=$request->file('file')->store('LibraryBooks');//E:\LMS\storage\app\LibraryBooks
         return ["result"=>$result];
     }
 }

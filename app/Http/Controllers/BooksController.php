@@ -32,8 +32,13 @@ class BooksController extends Controller
         $Books->author=$request->author;
         $Books->publisher=$request->publisher;
         $Books->category=$request->category;
-        $Books->file=$request->file;
+         $Books->file=$request->file;
         $result=$Books->save();
+       
+        
+        
+        
+        
         if($result)
         {
             return["Result"=>"Book detail has been saved"];
@@ -68,6 +73,7 @@ class BooksController extends Controller
             $Books->publisher=$request->publisher;
             $Books->category=$request->category;
             $Books->file=$request->file;
+            
             $result=$Books->save();
             if($result)
             {
@@ -91,6 +97,7 @@ class BooksController extends Controller
         $Books->author=$request->author;
         $Books->publisher=$request->publisher;
         $Books->category=$request->category;
+       // $Books->category=$request->description;
         $Books->file=$request->file;
         $result=$Books->save();
         if($result)
@@ -107,11 +114,20 @@ class BooksController extends Controller
     function deleteBooks($id)
     {
         $Books=Books::find($id);
-        $result=$Books->delete();
-        if($result)
-        return["Result"=>"Book detail has been deleted"];
-        else
-        return["Result"=>"Book detail has not been deleted"];
+        if($Books)
+        {
+            $result=$Books->delete();
+            if($result)
+            return["Result"=>"Book detail has been deleted"];
+            else
+            return["Result"=>"Book detail has not been deleted"];
+        }
+        else{
+            return response()->json([
+                'message'=>'Books is not find' 
+            ]);
+        }
+        
     }
 
     //serach book
