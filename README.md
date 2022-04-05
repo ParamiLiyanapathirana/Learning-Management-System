@@ -1,2 +1,2 @@
 # Management Information System
-LMS for Dhamma School.
+Backend for LMS created using Laravel8.
